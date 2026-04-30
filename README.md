@@ -8,10 +8,11 @@ AI-Powered Resume Screener & Job Match App
 
 ## Features (In Progress)
 - [x] PDF resume upload and text extraction
-- [ ] NLP skill extraction
-- [ ] Resume vs Job Description matching
-- [ ] Skill gap analysis
+- [x] NLP skill extraction
+- [x] Resume vs Job Description matching
+- [x] Skill gap analysis and suggestions
 - [ ] React dashboard
+- [ ] Deploy to Render + Vercel
 
 ## Run Locally
 cd backend
