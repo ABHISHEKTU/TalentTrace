@@ -1,6 +1,9 @@
 venv/
+.vscode/
 temp_uploads/
 __pycache__/
 *.pyc
 .env
 *.pdf
+*.dll
+*.exe
