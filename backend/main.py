@@ -103,14 +103,17 @@ async def match_resume(
     result = calculate_match_score(resume_text, job_description)
 
     return {
-        "filename": file.filename,
-        "job_description_preview": job_description[:200] + "...",
-        "match_score": result["match_score"],
-        "skill_score": result["skill_score"],
-        "semantic_score": result["semantic_score"],
-        "matched_skills": result["matched_skills"],
-        "missing_skills": result["missing_skills"],
-        "total_jd_skills": result["total_jd_skills"],
-        "total_resume_skills": result["total_resume_skills"],
-        "suggestions": result["suggestions"]
-    }
+    "filename": file.filename,
+    "job_description_preview": job_description[:200] + "...",
+    "match_score": result["match_score"],
+    "skill_score": result["skill_score"],
+    "semantic_score": result["semantic_score"],
+    "ats_score": result["ats_score"],
+    "ats_warnings": result["ats_warnings"],
+    "experience_level": result["experience_level"],
+    "matched_skills": result["matched_skills"],
+    "missing_skills": result["missing_skills"],
+    "total_jd_skills": result["total_jd_skills"],
+    "total_resume_skills": result["total_resume_skills"],
+    "suggestions": result["suggestions"]
+}
