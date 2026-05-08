@@ -23,7 +23,7 @@ function App() {
     formData.append('job_description', jobDescription);
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/match', formData);
+      const response = await axios.post('https://talenttrace-y5x2.onrender.com/match', formData);
       setResult(response.data);
     } catch (err) {
       setError('Something went wrong. Make sure the backend is running.');
