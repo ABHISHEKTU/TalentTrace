@@ -18,3 +18,7 @@ AI-Powered Resume Screener & Job Match App
 cd backend
 uvicorn main:app --reload
 Visit http://localhost:8000/docs
+
+## Live Demo
+- Frontend: https://talent-trace-eight.vercel.app
+- Backend API: https://talenttrace-y5x2.onrender.com/docs
