@@ -1,5 +1,5 @@
 import spacy
-from sentence_transformers import SentenceTransformer, util
+# from sentence_transformers import SentenceTransformer, util
 import re
 
 # Load spaCy model
@@ -8,11 +8,11 @@ nlp = spacy.load("en_core_web_md")
 # Load sentence transformer lazily
 _model = None
 
-def get_model():
-    global _model
-    if _model is None:
-        _model = SentenceTransformer("all-MiniLM-L6-v2")
-    return _model
+# def get_model():
+#     global _model
+#     if _model is None:
+#         _model = SentenceTransformer("all-MiniLM-L6-v2")
+#     return _model
 
 # Expanded skills list
 SKILLS_LIST = [
@@ -142,10 +142,13 @@ def calculate_match_score(resume_text: str, job_description: str) -> dict:
     skill_score = (len(matched_skills) / len(jd_skills) * 100) if jd_skills else 0
 
     # 4. Semantic similarity
-    model = get_model()
-    resume_embedding = model.encode(resume_text, convert_to_tensor=True)
-    jd_embedding = model.encode(job_description, convert_to_tensor=True)
-    semantic_score = float(util.cos_sim(resume_embedding, jd_embedding)[0][0]) * 100
+    resume_doc = nlp(resume_text[:10000])
+    jd_doc = nlp(job_description[:10000])
+    semantic_score = resume_doc.similarity(jd_doc) * 100
+    # model = get_model()
+    # resume_embedding = model.encode(resume_text, convert_to_tensor=True)
+    # jd_embedding = model.encode(job_description, convert_to_tensor=True)
+    # semantic_score = float(util.cos_sim(resume_embedding, jd_embedding)[0][0]) * 100
 
     # 5. Final score
     final_score = round((skill_score * 0.5) + (semantic_score * 0.5), 1)
