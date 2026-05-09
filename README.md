@@ -12,7 +12,7 @@ AI-Powered Resume Screener & Job Match App
 - [x] Resume vs Job Description matching
 - [x] Skill gap analysis and suggestions
 - [x] React dashboard
-- [ ] Deploy to Render + Vercel
+- [x] Deploy to Render + Vercel
 
 ## Run Locally
 cd backend
