@@ -22,3 +22,14 @@ Visit http://localhost:8000/docs
 ## Live Demo
 - Frontend: https://talent-trace-eight.vercel.app
 - Backend API: https://talenttrace-y5x2.onrender.com/docs
+
+## Screenshots
+
+### Upload Page
+![Upload Page](docs/screenshot1.png)
+
+### Results Dashboard
+![Results Dashboard](docs/screenshot2.png)
+
+### Skill Analysis
+![Skill Analysis](docs/screenshot3.png)
