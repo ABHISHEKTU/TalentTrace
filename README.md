@@ -60,9 +60,9 @@ React Dashboard → Match Score + Charts + Suggestions
 | Layer | Tools |
 |---|---|
 | Backend | Python, FastAPI |
-| NLP | spaCy, sentence-transformers |
+| NLP | spaCy (en_core_web_md) |
 | Frontend | React, Tailwind CSS |
-| Deployment | Render (backend), Vercel (frontend) |
+| Deployment | React, Recharts, Axios |
 
 ## Features
 
