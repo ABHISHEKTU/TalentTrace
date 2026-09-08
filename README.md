@@ -1,27 +1,15 @@
 # TalentTrace 🎯
-AI-Powered Resume Screener & Job Match App
 
-## Tech Stack
-- Backend: Python, FastAPI
-- NLP: spaCy, sentence-transformers (Week 2)
-- Frontend: React + Tailwind CSS (Week 4)
+AI-powered resume screener and job match analyzer built with Python, FastAPI, spaCy, and React. TalentTrace analyzes a resume against a job description and returns a match score, skill gap analysis, ATS compatibility score, and personalized improvement suggestions — helping job seekers tailor their resumes before applying.
 
-## Features (In Progress)
-- [x] PDF resume upload and text extraction
-- [x] NLP skill extraction
-- [x] Resume vs Job Description matching
-- [x] Skill gap analysis and suggestions
-- [x] React dashboard
-- [x] Deploy to Render + Vercel
+## Problem
 
-## Run Locally
-cd backend
-uvicorn main:app --reload
-Visit http://localhost:8000/docs
+Applicant Tracking Systems (ATS) filter out a large share of resumes before a human ever sees them, often over simple keyword or formatting mismatches. Most job seekers have no visibility into why they were rejected. TalentTrace closes that gap — it parses a resume and job description, quantifies the match, and tells the user exactly which skills are missing and how to close them.
 
-## Live Demo
-- Frontend: https://talent-trace-eight.vercel.app
-- Backend API: https://talenttrace-y5x2.onrender.com/docs
+## Demo
+
+- **Frontend:** https://talent-trace-eight.vercel.app
+- **Backend API docs:** https://talenttrace-y5x2.onrender.com/docs
 
 ## Screenshots
 
@@ -33,3 +21,56 @@ Visit http://localhost:8000/docs
 
 ### Skill Analysis
 ![Skill Analysis](docs/screenshot3.png)
+
+## How It Works
+
+1. User uploads a resume (PDF) and pastes a target job description.
+2. Backend extracts raw text from the PDF and runs NLP-based skill/entity extraction using spaCy.
+3. Resume and job description are embedded using sentence-transformers; similarity scoring produces a match percentage.
+4. A skill-gap layer diffs extracted resume skills against job-required skills.
+5. Results — match score, ATS compatibility score, missing skills, and improvement suggestions — are returned to the React dashboard.
+
+<!-- Optional: add a simple architecture diagram here (React → FastAPI → spaCy/sentence-transformers → response) -->
+
+## Tech Stack
+
+| Layer | Tools |
+|---|---|
+| Backend | Python, FastAPI |
+| NLP | spaCy, sentence-transformers |
+| Frontend | React, Tailwind CSS |
+| Deployment | Render (backend), Vercel (frontend) |
+
+## Features
+
+- PDF resume upload and text extraction
+- NLP-based skill extraction
+- Resume vs. job description semantic matching
+- Skill gap analysis with actionable suggestions
+- ATS compatibility scoring
+- React dashboard for results visualization
+
+## Run Locally
+
+```bash
+cd backend
+uvicorn main:app --reload
+```
+
+Visit http://localhost:8000/docs
+
+<!-- Add frontend run instructions too, e.g.:
+cd frontend
+npm install
+npm run dev
+-->
+
+## Limitations & Future Work
+
+- Skill matching relies on extracted keywords/entities; may miss semantically equivalent skills phrased differently
+- No support yet for non-English resumes
+- Planned: multi-resume batch comparison, resume rewriting suggestions powered by an LLM
+
+<!-- Add a LICENSE file (MIT is a common default) and badge here -->
+
+---
