@@ -1,6 +1,6 @@
 # TalentTrace 🎯
 
-AI-powered resume screener and job match analyzer built with Python, Django, spaCy, and React. TalentTrace analyzes a resume against a job description and returns a match score, skill gap analysis, ATS compatibility score, and personalized improvement suggestions — helping job seekers tailor their resumes before applying.
+AI-powered resume screener and job match analyzer built with Python, FastAPI, spaCy, and React. TalentTrace analyzes a resume against a job description and returns a match score, skill gap analysis, ATS compatibility score, and personalized improvement suggestions — helping job seekers tailor their resumes before applying.
 
 ## Problem
 
